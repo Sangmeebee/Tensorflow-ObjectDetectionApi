@@ -74,3 +74,4 @@ $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에
 5. 다운받은 repository의 LabelImg 디렉토리 안으로 들어가서
 6. $python labelImg.py 명령어 실행
 7. 위에 첨부한 이미지와 같은 labelimg 에디터가 나오면 이미지를 labeling 해준다. (단축키 w(라벨링), d(다음 사진), a(전 사진)) 
+8. labelimg 에디터를 통해 얻은 .xml파일을 위에 이미지와 같이 같은 디렉토리안에 동일한 이름으로 저장한다.
