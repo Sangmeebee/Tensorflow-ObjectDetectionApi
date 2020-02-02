@@ -57,4 +57,4 @@ $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에
   ***
 
 ##  이미지 라벨링하기 
-![예시 이미지](https://raw.githubusercontent.com/ByungJun25/Wiki/master/Markdown/example_image.jpg)
+![예시 이미지](./ex1.png)
