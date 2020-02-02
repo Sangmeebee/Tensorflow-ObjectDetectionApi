@@ -1,5 +1,5 @@
 
-# Tensorflow Object-Detection API 사용하여 사물인식 학습하기
+# Tensorflow Object-Detection API 사용하여 사물인식 학습 & 학습한 파일 안드로이드 
 
 ##  환경설정    
   
