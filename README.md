@@ -36,7 +36,7 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
     - $pip install matplotlib
 
 
-1. Clone this * [Repository](https://github.com/tensorflow/models)
+1. Clone this *[Repository](https://github.com/tensorflow/models)
     - $git clone https://github.com/tensorflow/models
 
 1. Protobuf 설치 후 protobuf를 이용하여 models/research/object_detection/protos 디렉토리에 pb2.py 파일들 만들기
