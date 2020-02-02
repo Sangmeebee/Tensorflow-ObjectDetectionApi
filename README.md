@@ -78,4 +78,27 @@ $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에
 
  ***  
    
- ## 이미지 학습하기
+ ## .xml 파일을 .csv 파일로 변환 시키기
+ 
+~~~
+TFRecord 파일 포맷이란
+TFRecord 파일은 텐서플로우의 학습 데이타 등을 저장하기 위한 바이너리 데이타 포맷으로,
+구글의 Protocol Buffer 포맷으로 데이타를 파일에 Serialize(직렬화) 하여 저장한다.
+
+CSV 파일에서와 같이 숫자나 텍스트 데이타를 읽을때는 크게 지장이 없지만, 
+이미지 데이타를 읽을 경우 이미지는 JPEG나 PNG 형태의 파일로 저장되어 있고,
+이에 대한 메타 데이타와 라벨은 별도의 파일에 저장되어 있기 때문에, 
+학습 데이타를 읽을때 메타데이타나 라벨용 파일 하나만 읽는 것이 아니라 이미지 파일도 별도로 읽어야 하기 때문에 코드가 복잡해진다.
+
+또한 이미지를 JPG나 PNG 포맷으로 읽어서 매번 디코딩을 하게 되면, 그 성능이 저하되서 학습단계에서 데이타를 읽는 부분에서 많은 성능 저하가 발생한다.
+
+이와 같이 성능과 개발의 편의성을 이유로 TFRecord 파일 포맷을 이용하는 것이 좋다.
+~~~
+
+
+- 위와 같은 이유로 TFRecord 파일로 변환하기 위해서 labelImg를 통해 생성한 xml 파일을 먼저 CSV 파일로 변환해야 한다.
+1. https://github.com/datitran/raccoon_dataset 링크를 클릭하여 repository를 다운받자
+2. xml_to_csv.py 파일과 generate_tfrecord.py 파일을 복사해 research/object_detection 폴더에 붙혀넣는다.
+3. xml_to_csv.py 파일에 코드 중 image_path = os.path.join(os.getcwd(), 'annotations') 를
+image_path = os.path.join(os.getcwd(), 'images/test') 로 수정한다.
+4. 
