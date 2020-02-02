@@ -32,8 +32,10 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
 1. Clone this repository.(https://github.com/tensorflow/models)
     - $git clone https://github.com/tensorflow/models
 
-1. Protobuf 설치
-    - https://github.com/protocolbuffers/protobuf/releases
-    - 위의 링크에서 해당하는 os에 대한 protobuf 설치! (version 상관X)
+1. Protobuf 설치 후 protobuf를 이용하여 models/research/object_detection/protos 디렉토리에 pb2.py 파일들 만들기
+    - $brew install protobuf
+    - models/research 디렉토리로 이동
+    - $protoc object_detection/protos/*.proto --python_out=.
+    - 위 명령어 실행시 protos 디렉토리에 이름이 '_pb2.py'라고 끝나는 파일들이 많이 생성되 있을 것이다. 
 
 1. 
