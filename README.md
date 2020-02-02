@@ -7,9 +7,9 @@
 
 ####  환경설정
 
-1. python 3.6.5 버전으로 가상환경을 만들어준다.
+>1. python 3.6.5 버전으로 가상환경을 만들어준다.
 
-https://www.python.org/downloads/release/python-365/ 링크에서 macOs버젼을 install하고, 
+>   >  https://www.python.org/downloads/release/python-365/ 링크에서 macOs버젼을 install하고, 
 install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 Python 3.6.5버젼을 환경변수로 세팅한다.
 
 
