@@ -27,3 +27,6 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
     - pip install lxml
     - pip install jupyter
     - pip install matplotlib
+
+
+3. Clone this repository.
