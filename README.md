@@ -19,7 +19,7 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
   
   
   
-2. 가상환경에 tensorflow object detection api를 사용하기위한 라이브러리들을 설치 한다.
+1. 가상환경에 tensorflow object detection api를 사용하기위한 라이브러리들을 설치 한다.
 
     - pip install tensorflow==1.8
     - pip install Cython
@@ -29,4 +29,6 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
     - pip install matplotlib
 
 
-3. Clone this repository.
+1. Clone this repository.(https://github.com/tensorflow/models)
+
+1. 
