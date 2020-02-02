@@ -58,3 +58,12 @@ $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에
 
 ##  이미지 라벨링하기 
 ![예시 이미지](./ex1.png)
+
+1. [LabelImg Repository](https://github.com/tzutalin/labelImg) 를 클릭
+2. $git clone https://github.com/tzutalin/labelImg  명령어로 repository 다운
+3. $brew install qt
+4. $brew install libxml2
+5. 다운받은 repository의 LabelImg 디렉토리 안으로 들어가서
+6. $python labelImg.py 명령어 실행
+7. 위에 첨부한 이미지와 같은 labelimg 에디터가 나오면 이미지를 labeling 해준다. (단축키 w(라벨링), d(다음 사진), a(전 사진)) 
+- LabelImg 사용법을 잘 모르겠다면 구글링 해보면 무수히 많은 자료가 있다.
