@@ -99,6 +99,23 @@ CSV 파일에서와 같이 숫자나 텍스트 데이타를 읽을때는 크게 
 - 위와 같은 이유로 TFRecord 파일로 변환하기 위해서 labelImg를 통해 생성한 xml 파일을 먼저 CSV 파일로 변환해야 한다.
 1. https://github.com/datitran/raccoon_dataset 링크를 클릭하여 repository를 다운받자
 2. xml_to_csv.py 파일과 generate_tfrecord.py 파일을 복사해 research/object_detection 폴더에 붙혀넣는다.
-3. xml_to_csv.py 파일에 코드 중 image_path = os.path.join(os.getcwd(), 'annotations') 를
-image_path = os.path.join(os.getcwd(), 'images/test') 로 수정한다.
-4. 
+3. xml_to_csv.py 코드를 수정한다.
+~~~
+from xml_to_csv.py
+
+def main():
+    image_path = os.path.join(os.getcwd(), 'annotations')
+    xml_df = xml_to_csv(image_path)
+    xml_df.to_csv('raccoon_labels.csv', index=None)
+    print('Successfully converted xml to csv.')
+~~~
+~~~
+revised code
+
+def main():
+    for directory in ['train','test']:
+        image_path = os.path.join(os.getcwd(), 'images/{}'.format(directory))
+        xml_df = xml_to_csv(image_path)
+        xml_df.to_csv('data/{}_labels.csv'.format(directory), index=None)
+        print('Successfully converted xml to csv.')
+~~~
