@@ -1,9 +1,5 @@
-# Tensorflow-ObjectDetectionApi
 
-
-
-### 맥에서 Object-Detection API 를 사용해 보자
-***  
+# 맥에서 Object-Detection API 사용하기
 
 ####  환경설정
 
