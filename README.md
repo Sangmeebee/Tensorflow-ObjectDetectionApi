@@ -78,7 +78,7 @@ $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에
 
  ***  
    
- ## .xml 파일을 .csv 파일로 변환 시키기
+ ## .record 파일 만들기
  
 ~~~
 TFRecord 파일 포맷이란
@@ -101,7 +101,7 @@ CSV 파일에서와 같이 숫자나 텍스트 데이타를 읽을때는 크게 
 2. xml_to_csv.py 파일과 generate_tfrecord.py 파일을 복사해 research/object_detection 폴더에 붙혀넣는다.
 3. xml_to_csv.py 코드를 수정한다.
 ~~~
-from xml_to_csv.py
+#from xml_to_csv.py
 
 def main():
     image_path = os.path.join(os.getcwd(), 'annotations')
@@ -110,7 +110,7 @@ def main():
     print('Successfully converted xml to csv.')
 ~~~
 ~~~
-revised code
+#revised code
 
 def main():
     for directory in ['train','test']:
@@ -120,3 +120,35 @@ def main():
         print('Successfully converted xml to csv.')
 ~~~
 4. object_detection 디렉토리에 data 디렉토리가 생성된 것을 볼 수 있고, data 디렉토리 안에는 두개의 .csv 파일이 생성된 것을 볼 수 있다.
+5. generate_tfrecord.py 파일의 코드를 수정한다. 
+    - labelimg에서 라벨링 한 이름을 row_label == '(여기)' 여기 안에 넣어주면 된다.
+~~~
+#from generate_tfrecord.py
+
+def class_text_to_int(row_label):
+    if row_label == 'raccoon':
+        return 1
+    else:
+        None
+~~~
+~~~
+#revised code
+
+def class_text_to_int(row_label):
+    if row_label == 'green':
+        return 1
+    elif row_label == 'red':
+        return 2
+    else:
+        None
+~~~
+
+6. research/object_detection 디렉토리에서 아래의 명령어를 각각 실행시켜주면 된다.
+~~~
+# for test data
+!python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record  --image_dir=images/test
+~~~
+~~~
+# for train data
+!python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record  --image_dir=images/train
+~~~
