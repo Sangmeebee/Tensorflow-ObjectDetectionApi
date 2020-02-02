@@ -1,5 +1,5 @@
 
-## Tensorflow Object-Detection API 사용하여 Custom model학습 </br>& 안드로이드 스튜디오에 적용하기
+# Tensorflow Object-Detection API 사용해 Custom model학습</br>& 안드로이드 스튜디오에 적용하기
 
 ##  환경설정    
   
