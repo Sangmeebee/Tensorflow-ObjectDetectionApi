@@ -146,9 +146,9 @@ def class_text_to_int(row_label):
 6. research/object_detection 디렉토리에서 아래의 명령어를 각각 실행시켜주면 된다.
 ~~~
 # for test data
-!python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record  --image_dir=images/test
+$python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record  --image_dir=images/test
 ~~~
 ~~~
 # for train data
-!python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record  --image_dir=images/train
+$python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record  --image_dir=images/train
 ~~~
