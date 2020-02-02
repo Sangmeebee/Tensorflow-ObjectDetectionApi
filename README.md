@@ -12,7 +12,7 @@
 
     1. python 3.6.5 버전을 설치한다.
         - https://www.python.org/downloads/release/python-365/ 링크에서 macOS version을 install하고, 
-install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 Python 3.6.5버젼을 환경변수로 세팅한다. (전에 Python3를 install 했더라면, python3를 downgrade 시켜줘야 한다...)
+        install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 Python 3.6.5버젼을 환경변수로 세팅한다. (전에 Python3를 install 했더라면, python3를 downgrade 시켜줘야 한다...)
 
     1. virtualenv를 다운받는다.
         - $sudo pip install virtualenv   
@@ -36,7 +36,7 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
     - $pip install matplotlib
 
 
-1. Clone this *[Repository](https://github.com/tensorflow/models)
+1. Clone this [Repository](https://github.com/tensorflow/models)
     - $git clone https://github.com/tensorflow/models
 
 1. Protobuf 설치 후 protobuf를 이용하여 models/research/object_detection/protos 디렉토리에 pb2.py 파일들 만들기
