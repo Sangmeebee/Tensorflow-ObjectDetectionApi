@@ -153,4 +153,4 @@ $python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=tes
 $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record  --image_dir=images/train
 ~~~
 7. 아래와 같이 나오면 research/object_detection 디렉토리에 train.record 파일과 test.record 파일이 생성 된다. 
-</br?![예시 이미지](./ex3.png)
+</br>![예시 이미지](./ex3.png)
