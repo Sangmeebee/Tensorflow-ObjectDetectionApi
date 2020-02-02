@@ -44,5 +44,8 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
     - 위의 방법으로 하면 터미널을 끄고 킬 때마다 저 명령어를 실행 해줘야 한다. 
     - 터미널을 껏다가 켜도 계속 환경변수가 유지 되게 하고 싶으면
     $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에 PYTHONPATH=$PYTHONPATH:/PATH-TO/models/research:/PATH-TO/models/research/slim 을 추가 해주면 된다.
-1. 환경변수 등록명령
-1. 환경변수 등록
+
+1. 환경설정이 제대로 되었는지 확인하기
+    - models/research 디렉토리로 이동한 뒤, 밑에 명령어를 실행하자
+    - $python object_detection/builders/model_builder_test.py
+    - 잘 동작하면 제대로 환경설정이 된 것이고, 위의 라이브러리를 잘 설치 했는데 에러가 난다면, tensorflow 버젼(tensorflow 1.8 버젼 추천)이나 터미널을 껏다 켰는데 환경변수 등록하는 것을 잊은 건 아닌지 한번 확인해보자.
