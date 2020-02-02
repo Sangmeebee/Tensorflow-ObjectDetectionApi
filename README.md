@@ -119,3 +119,4 @@ def main():
         xml_df.to_csv('data/{}_labels.csv'.format(directory), index=None)
         print('Successfully converted xml to csv.')
 ~~~
+4. object_detection 디렉토리에 data 디렉토리가 생성된 것을 볼 수 있고, data 디렉토리 안에는 두개의 .csv 파일이 생성된 것을 볼 수 있다.
