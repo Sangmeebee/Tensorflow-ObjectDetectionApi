@@ -57,7 +57,7 @@ $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에
   ***
 
 ##  이미지 라벨링하기 
-![예시 이미지](./ex12.png)
+![예시 이미지](./ex2.png)
   
     
 이미지 라벨링 하기 전에 사전 작업은 자신이 학습 할 사진을 200장 정도 모아, models/research/object_detection/images 디렉토리에(images 디렉토리는 기존에 없을테니, 새로 만들면 된다.) train 과 test 폴더를 생성해 주고, train과 test 폴더에 사진을 각각 넣어준다.
