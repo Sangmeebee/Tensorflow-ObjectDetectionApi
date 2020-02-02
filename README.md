@@ -34,7 +34,7 @@
 ### 3. Clone this [Repository](https://github.com/tensorflow/models)
     - $git clone https://github.com/tensorflow/models
 
-### 4. Protobuf 설치 후 protobuf를 이용하여 models/research/object_detection/protos 디렉토리에    pb2.py 파일들 만들기
+#### 4. Protobuf 설치 후 protobuf를 이용하여 models/research/object_detection/protos 디렉토리에    pb2.py 파일들 만들기
 - $brew install protobuf
 - models/research 디렉토리로 이동
 - $protoc object_detection/protos/*.proto --python_out=.
