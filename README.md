@@ -1,7 +1,7 @@
 
 # Tensorflow Object-Detection API 사용하여 사물인식 학습하기
 
-###  환경설정  
+##  환경설정  
   
   
 1. python 3.6.5 버전으로 가상환경을 만들어준다.  
@@ -38,4 +38,11 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
     - $protoc object_detection/protos/*.proto --python_out=.
     - 위 명령어 실행시 protos 디렉토리에 이름이 '_pb2.py'라고 끝나는 파일들이 많이 생성되 있을 것이다. 
 
-1. 
+1. 환경변수 등록
+    - $export PYTHONPATH=$PYTHONPATH:/PATH-TO/models/research:/PATH-TO/models/research/slim
+    - 위의 명령으로 임시로 환경변수를 등록할 수 있다. (/PATH-TO 대신 models를 저장한 디렉토리 경로를 작성해 주면 된다.)
+    - 위의 방법으로 하면 터미널을 끄고 킬 때마다 저 명령어를 실행 해줘야 한다. 
+    - 터미널을 껏다가 켜도 계속 환경변수가 유지 되게 하고 싶으면
+    $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에 PYTHONPATH=$PYTHONPATH:/PATH-TO/models/research:/PATH-TO/models/research/slim 을 추가 해주면 된다.
+1. 환경변수 등록명령
+1. 환경변수 등록
