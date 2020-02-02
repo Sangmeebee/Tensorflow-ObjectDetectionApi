@@ -49,3 +49,7 @@ install과정에서 (Add Python 3.6 to PATH) 체크박스를 선택함으로써 
     - models/research 디렉토리로 이동한 뒤, 밑에 명령어를 실행하자
     - $python object_detection/builders/model_builder_test.py
     - 잘 동작하면 제대로 환경설정이 된 것이고, 위의 라이브러리를 잘 설치 했는데 에러가 난다면, tensorflow 버젼(tensorflow 1.8 버젼 추천)이나 터미널을 껏다 켰는데 환경변수 등록하는 것을 잊은 건 아닌지 한번 확인해보자.
+
+
+##  이미지 라벨링하기 
+1. 
