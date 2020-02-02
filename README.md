@@ -2,8 +2,8 @@
 # Tensorflow Object-Detection API 사용하여 사물인식 학습하기
 
 ##  환경설정  
-  
-  
+###  
+###  
 1. python 3.6.5 버전으로 가상환경을 만들어준다.  
 
     1. python 3.6.5 버전을 설치한다.
