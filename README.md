@@ -1,5 +1,5 @@
 
-# 맥에서 Object-Detection API 사용하기
+# Tensorflow Object-Detection API 사용하여 사물인식 학습하기 (MAC)
 
 ####  환경설정
 
