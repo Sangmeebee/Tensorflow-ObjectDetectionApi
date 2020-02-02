@@ -6,7 +6,7 @@
   
   
   
-#### python 3.6.5 버전으로 가상환경을 만들어준다.  
+### python 3.6.5 버전으로 가상환경을 만들어준다.  
 
 
 
@@ -25,7 +25,7 @@
   
   
   
-1. 가상환경에 tensorflow object detection api를 사용하기위한 라이브러리들을 설치 한다.
+### 가상환경에 tensorflow object detection api를 사용하기위한 라이브러리들을 설치 한다.
 
     - $pip install tensorflow==1.8
     - $pip install Cython
