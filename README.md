@@ -1,5 +1,5 @@
 
-# Tensorflow Object-Detection API 사용하여 사물인식 학습하기
+# Tensorflow Object-Detection API 사용해 Custom model학습</br>& 안드로이드 스튜디오에 적용하기
 
 ##  환경설정    
   
@@ -152,3 +152,5 @@ $python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=tes
 # for train data
 $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record  --image_dir=images/train
 ~~~
+7. 아래와 같이 나오면 research/object_detection 디렉토리에 train.record 파일과 test.record 파일이 생성 된다. <br/><br/>
+![예시 이미지](./ex3.png)
