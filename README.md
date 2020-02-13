@@ -156,6 +156,8 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
 7. 아래와 같이 나오면 research/object_detection 디렉토리에 train.record 파일과 test.record 파일이 생성 된다. <br/><br/>
 ![예시 이미지](./ex3.png)
 
+ ***  
+   
  ## 모델 학습을 위한 구성세팅
  1. labelmap 생성
      - 아래와 같은 내용으로 labelmap.pbtxt 파일을 생성한다. 
@@ -254,6 +256,9 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
        num_readers: 1
      }
      ~~~
+     
+ ***  
+   
  ## 모델 학습시키기
  
  1. 우리의 모델 학습의 정확한 검토를 위하여 COCO evaluation metrics를 사용 할 것이다. 그러기 위해 COCO APIs를 설치할 것이다.
@@ -274,6 +279,8 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
      ![예시 이미지](./ex7.png)
  5. 아래와 같이 되면 정상적으로 학습하는 중이다.
      ![예시 이미지](./ex8.png)
+ 
+ ***  
      
  ## Training Evaluation(학습 검토)
  1. 학습중인 터미널은 그대로 두고 새로운 터미널에서 아래의 작업을 해도 무방하다.
@@ -283,6 +290,8 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
      python eval.py --logtostderr --pipeline_config_path=training/ssd_mobilenet_v2_quantized_300x300_coco.config --checkpoint_dir=training/ --eval_dir=training/
      ~~~
 
+ ***  
+   
  ## TensorBoard에서 학습과정 확인하기
  1. 새로운 터미널을 사용하자.
  2. research/object_detection 디렉토리에서 아래의 명령을 통해 tensorBoard를 실행한다. 
@@ -292,3 +301,6 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
  3. http://localhost:6006 주소를 통해서 tensorBoard로 접속하면 Images에서 아래 이미지와 같이 학습된 모습을 볼 수 있다.
      ![예시 이미지](./ex9.png)
  
+ ***  
+ 
+ ## 학습한 모델 안드로이드 스튜디오에 적용시키기
