@@ -256,5 +256,11 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
      ~~~
  ## 모델 학습시키기
  
- 1. models/research/object_detection/legacy에 있는 train.py 파일을 models/research/object_detection 경로로 이동시킨다
- 2. 
+ 1. 우리의 모델 학습의 정확한 검토를 위하여 COCO evaluation metrics를 사용 할 것이다. 그러기 위해 COCO APIs를 설치할 것이다.
+ ~~~
+ git clone https://github.com/cocodataset/cocoapi.git
+ cd cocoapi/PythonAPI
+ sudo make
+ cp -r pycocotools <path_to_tensorflow>/models/research/
+ ~~~
+ 2. models/research/object_detection/legacy에 있는 train.py 파일을 models/research/object_detection 경로로 이동시킨다
