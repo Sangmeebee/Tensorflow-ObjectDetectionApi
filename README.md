@@ -184,9 +184,9 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
  3. Create training config file
      - research/object_detection/samples/configs 디렉토리에 있는 ssd_mobilenet_v2_quantized_300x300_coco.config 파일을 찾아서 research/object_detection/training 디렉토리로 옮기자.
      - ssd_mobilenet_v2_quantized_300x300_coco.config 파일을 수정해 줄 것이다.
-         1.
-         2.
-         3.
+         -
+         -
+         -
  ## 모델 학습시키기
  
  1. models/research/object_detection/legacy에 있는 train.py 파일을 models/research/object_detection 경로로 이동시킨다
