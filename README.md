@@ -170,7 +170,7 @@ item {
 ~~~
  1. 위와 같은 내용으로 labelmap.pbtxt 파일을 생성한다. 
  2. research/object_detection 디렉토리에 training 디렉토리를 생성하여 labelmap.pbtxt 파일을 넣어준다.
-     - 1, 2번을 실행한 결과![예시 이미지](./ex3.png)
+     - 1, 2번을 실행한 결과![예시 이미지](./ex5.png)
  3. 
  ## 모델 학습시키기
  
