@@ -360,4 +360,4 @@ greenlight
   - examples/lite/examples/object_detection/android/app/src/main/assets 경로에 detectx.tflite파일과 labelmap1.txt 파일을 넣어준다.
   - 안드로이드 스튜디오를 실행해보면 정상적으로 작동 할 것이다.
   - 다음과 같은 결과가 나온다.
-  ![예시 이미지](./ex12.jpeg)
+  ![예시 이미지](./ex12.jpeg =20x100)
