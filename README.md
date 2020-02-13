@@ -157,7 +157,7 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
 ![예시 이미지](./ex3.png)
 
  ## 모델 학습을 위한 구성세팅
-1. labelmap 생성
+ 1. labelmap 생성
    - 아래와 같은 내용으로 labelmap.pbtxt 파일을 생성한다. 
 ~~~
 item {
@@ -172,7 +172,21 @@ item {
 ~~~
    - research/object_detection 디렉토리에 training 디렉토리를 생성하여 labelmap.pbtxt 파일을 넣어준다.
    - 1, 2번을 실행한 결과![예시 이미지](./ex5.png)
- 3. 
+ 2. transfer leaning 준비하기
+   - 미리 train되있는 모델인 ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03 을 사용하여 우리의 학습을 진행 할 것이다.
+   - 아래의 방법을 이용하여 research/object_detection 디렉토리에 ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03을 다운받자
+~~~
+curl -O http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03.tar.gz
+
+tar xzf ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03.tar.gz
+~~~
+   - 우리가 모델을 학습시킬 때, 학습의 스타트 포인트를 다운받은 이 파일을 체크포인트로 사용 할 것이다.
+ 3. Create training config file
+   - research/object_detection/samples/configs 디렉토리에 있는 ssd_mobilenet_v2_quantized_300x300_coco.config 파일을 찾아서 research/object_detection/training 디렉토리로 옮기자.
+   - ssd_mobilenet_v2_quantized_300x300_coco.config 파일을 수정해 줄 것이다.
+      1.
+      2.
+      3.
  ## 모델 학습시키기
  
  1. models/research/object_detection/legacy에 있는 train.py 파일을 models/research/object_detection 경로로 이동시킨다
