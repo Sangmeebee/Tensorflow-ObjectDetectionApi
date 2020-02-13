@@ -302,5 +302,47 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
      ![예시 이미지](./ex9.png)
  
  ***  
+   
+ ## 학습한 결과를 Inference Graph로 Export 하기
+ 1. research/object_detection/training 디렉토리 안에 model.ckpt-XXXX 파일이 있을 것이다(XXXX는 step number).
+ 2. obeject_detection 디렉토리에서 아래의 명령을 실행하면 inference_graph 디렉토리가 생성될 것이다.
+     ~~~
+     python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/ssd_mobilenet_v2_quantized_300x300_coco.config --trained_checkpoint_prefix training/model.ckpt-XXXX --output_directory inference_graph
+     ~~~
+ 3. 다양한 어플리케이션에서 inference_graph 디렉토리에 있는 frozen_inference_graph.pb 파일을 사용 할 수 있다.
+     ![예시 이미지](./ex10.png)
+ ***  
  
  ## 학습한 모델 안드로이드 스튜디오에 적용시키기
+ ### 1. Tensorflow Lite에서 사용 가능한 TensorFlow frozen graph 
+  - 아래의 명령을 object_detection 디렉토리에서 실행하자
+  ~~~
+python export_tflite_ssd_graph.py \
+--pipeline_config_path=training/ssd_mobilenet_v2_quantized_300x300_coco.config \
+--trained_checkpoint_prefix=training/model.ckpt-237 \
+--output_directory=tflite \
+--add_postprocessing_op=true
+  ~~~
+  - tflite 디렉토리가 생성될 것이며, 그 디렉토리 안에는 tflite_graph.pb 파일과 tflite_graph.pbtxt 파일이 있을 것이다.
+ ### 2. 안드로이드에서 실행할 tensorflow lite 다운받기
+  - git clone https://github.com/tensorflow/examples 
+  - 위의 명령을 통해 tensorflow lite를 다운받자
+ ### 3. 안드로이드에서 적용할 .tflite 파일 만들기
+  - tensorflow/tensorflow/lite/python 에 있는 tflite_convert.py 파일을 object_detection 폴더에 복사
+  - 아래의 명령어를 사용해서 tflite 디렉토리 안에 detect.tflite 파일을 생성하자
+  ~~~
+  tflite_convert \
+--graph_def_file=tflite/tflite_graph.pb \
+--output_file=tflite/detect.tflite \
+--output_format=TFLITE \
+--input_shapes=1,300,300,3 \
+--input_arrays=normalized_input_image_tensor \
+--output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3' \
+--inference_type=QUANTIZED_UINT8 \
+--mean_values=128 \
+--std_dev_values=127 \
+--change_concat_input_ranges=false \
+--allow_custom_ops
+  ~~~
+  - 다음과 같은 결과가 나온다.
+  ![예시 이미지](./ex11.png)
