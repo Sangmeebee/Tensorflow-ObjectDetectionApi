@@ -327,7 +327,7 @@ python export_tflite_ssd_graph.py \
  ### 2. 안드로이드에서 실행할 tensorflow lite 다운받기
   - git clone https://github.com/tensorflow/examples 
   - 위의 명령을 통해 tensorflow lite를 다운받자
- ### 3. 안드로이드에서 적용할 .tflite 파일 만들기
+ ### 3. 안드로이드에서 적용할 detect.tflite 파일과 labelmap.txt 만들기
   - tensorflow/tensorflow/lite/python 에 있는 tflite_convert.py 파일을 object_detection 폴더에 복사
   - 아래의 명령어를 사용해서 tflite 디렉토리 안에 detect.tflite 파일을 생성하자
   ~~~
@@ -346,3 +346,9 @@ python export_tflite_ssd_graph.py \
   ~~~
   - 다음과 같은 결과가 나온다.
   ![예시 이미지](./ex11.png)
+  - tflite 디렉토리 안에 아래와 같은 내용으로 labelmap.txt 파일을 만들어 주자.
+  ~~~
+  ???
+redlight
+greenlight
+  ~~~
