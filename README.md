@@ -157,7 +157,7 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
 ![예시 이미지](./ex3.png)
 
  ## 모델 학습을 위한 구성세팅
- 1. labelmap 생성
+1. labelmap 생성
    - 아래와 같은 내용으로 labelmap.pbtxt 파일을 생성한다. 
 ~~~
 item {
