@@ -183,10 +183,77 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
      - 우리가 모델을 학습시킬 때, 학습의 스타트 포인트를 다운받은 이 파일을 체크포인트로 사용 할 것이다.
  3. Create training config file
      - research/object_detection/samples/configs 디렉토리에 있는 ssd_mobilenet_v2_quantized_300x300_coco.config 파일을 찾아서 research/object_detection/training 디렉토리로 옮기자.
-     - ssd_mobilenet_v2_quantized_300x300_coco.config 파일을 수정해 줄 것이다.
-         -
-         -
-         -
+     - 아래와 같이 ssd_mobilenet_v2_quantized_300x300_coco.config 파일을 수정
+     - 9번째 line 수정 
+     ~~~
+     num_classes: 90
+     ~~~
+     ~~~
+     num_classes: 2
+     ~~~
+     - 156번째 line 수정 
+     ~~~
+     fine_tune_checkpoint: "PATH_TO_BE_CONFIGURED/model.ckpt"
+     ~~~
+     ~~~
+     fine_tune_checkpoint: "/Users/sangmee/Desktop/sangmee/TFlow/models/research/object_detection/ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03/model.ckpt"
+     ~~~
+     - 173~178번째 line 수정 
+     ~~~
+     train_input_reader: {
+       tf_record_input_reader {
+         input_path: "PATH_TO_BE_CONFIGURED/mscoco_train.record-?????-of-00100"
+       }
+       label_map_path: "PATH_TO_BE_CONFIGURED/mscoco_label_map.pbtxt"
+     }
+     ~~~
+     ~~~
+     train_input_reader: {
+       tf_record_input_reader {
+         input_path: "/Users/sangmee/Desktop/sangmee/TFlow/models/research/object_detection/train.record"
+       }
+       label_map_path: "/Users/sangmee/Desktop/sangmee/TFlow/models/research/object_detection/training/labelmap.pbtxt"
+     }
+     ~~~
+     - 180~186번째 line 수정 (num_examples에는 학습시킬 사진의 갯수를 넣는다.)
+     ~~~
+     eval_config: {
+       num_examples: 8000
+       # Note: The below line limits the evaluation process to 10 evaluations.
+       # Remove the below line to evaluate indefinitely.
+       max_evals: 10
+     }
+     ~~~
+     ~~~
+     eval_config: {
+       num_examples: 24
+       # Note: The below line limits the evaluation process to 10 evaluations.
+       # Remove the below line to evaluate indefinitely.
+       max_evals: 10
+       metrics_set: "coco_detection_metrics"
+     }
+     ~~~
+     - 188~195번째 line 수정 
+     ~~~
+     eval_input_reader: {
+       tf_record_input_reader {
+         input_path: "PATH_TO_BE_CONFIGURED/mscoco_val.record-?????-of-00010"
+       }
+       label_map_path: "PATH_TO_BE_CONFIGURED/mscoco_label_map.pbtxt"
+       shuffle: false
+       num_readers: 1
+     }
+     ~~~
+     ~~~
+     eval_input_reader: {
+       tf_record_input_reader {
+         input_path: "/Users/sangmee/Desktop/sangmee/TFlow/models/research/object_detection/test.record"
+       }
+       label_map_path: "/Users/sangmee/Desktop/sangmee/TFlow/models/research/object_detection/training/labelmap.pbtxt"
+       shuffle: false
+       num_readers: 1
+     }
+     ~~~
  ## 모델 학습시키기
  
  1. models/research/object_detection/legacy에 있는 train.py 파일을 models/research/object_detection 경로로 이동시킨다
