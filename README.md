@@ -344,9 +344,11 @@ python export_tflite_ssd_graph.py \
 --change_concat_input_ranges=false \
 --allow_custom_ops
   ~~~
-  </br>- 다음과 같은 결과가 나온다.
+  </br>
+  - 다음과 같은 결과가 나온다.
   ![예시 이미지](./ex11.png)
-  </br>- tflite 디렉토리 안에 아래와 같은 내용으로 labelmap.txt 파일을 만들어 주자.
+  </br>
+  - tflite 디렉토리 안에 아래와 같은 내용으로 labelmap.txt 파일을 만들어 주자.
   ~~~
   ???
 redlight
