@@ -155,3 +155,24 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
 ~~~
 7. 아래와 같이 나오면 research/object_detection 디렉토리에 train.record 파일과 test.record 파일이 생성 된다. <br/><br/>
 ![예시 이미지](./ex3.png)
+
+ ## 모델 학습을 위한 구성세팅
+ ~~~
+item {
+	id: 1
+	name: 'greenlight'
+}
+
+item {
+	id: 2
+	name: 'redlight'
+}
+~~~
+ 1. 위와 같은 내용으로 labelmap.pbtxt 파일을 생성한다. 
+ 2. research/object_detection 디렉토리에 training 디렉토리를 생성하여 labelmap.pbtxt 파일을 넣어준다.
+     - 1, 2번을 실행한 결과![예시 이미지](./ex3.png)
+ 3. 
+ ## 모델 학습시키기
+ 
+ 1. models/research/object_detection/legacy에 있는 train.py 파일을 models/research/object_detection 경로로 이동시킨다
+ 2. 
