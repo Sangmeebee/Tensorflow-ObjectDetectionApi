@@ -157,6 +157,7 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
 ![예시 이미지](./ex3.png)
 
  ## 모델 학습을 위한 구성세팅
+ 1.  
  ~~~
 item {
 	id: 1
@@ -168,7 +169,7 @@ item {
 	name: 'redlight'
 }
 ~~~
- 1. 위와 같은 내용으로 labelmap.pbtxt 파일을 생성한다. 
+ 위와 같은 내용으로 labelmap.pbtxt 파일을 생성한다. 
  2. research/object_detection 디렉토리에 training 디렉토리를 생성하여 labelmap.pbtxt 파일을 넣어준다.
      - 1, 2번을 실행한 결과![예시 이미지](./ex5.png)
  3. 
