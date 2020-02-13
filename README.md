@@ -51,7 +51,7 @@ $open ~/.bash_profile 명령어를 통해 .bash_profile 을 열어 맨 밑줄에
 ### 6. 환경설정이 제대로 되었는지 확인하기
 - models/research 디렉토리로 이동한 뒤, 밑에 명령어를 실행하자
 - $python object_detection/builders/model_builder_test.py
-![예시 이미지](./ex3.png)
+![예시 이미지](./ex4.png)
 - 위의 이미지와 같이 잘 동작하면 제대로 환경설정이 된 것이고, 위의 라이브러리를 잘 설치 했는데 에러가 난다면, tensorflow 버젼(tensorflow 1.8 버젼 추천)이나 터미널을 껏다 켰는데 환경변수 등록하는 것을 잊은 건 아닌지 한번 확인해보자.
 
   
