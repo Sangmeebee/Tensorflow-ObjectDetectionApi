@@ -257,7 +257,7 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
  ## 모델 학습시키기
  
  1. 우리의 모델 학습의 정확한 검토를 위하여 COCO evaluation metrics를 사용 할 것이다. 그러기 위해 COCO APIs를 설치할 것이다.
-     - 아래의 명령을 통해 research 디렉토리에 pycocotools 디렉토리를 가져다 놓자.
+     - 아래의 명령을 통해 cocoapi를 다운받고, research 디렉토리에 cocoapi디렉토리에 있는 pycocotools를 가져다 놓자.
      ~~~
      git clone https://github.com/cocodataset/cocoapi.git
      cd cocoapi/PythonAPI
@@ -266,3 +266,29 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
      ~~~
      ![예시 이미지](./ex6.png)
  2. models/research/object_detection/legacy에 있는 train.py 파일을 models/research/object_detection 경로로 이동시킨다
+ 3. research/object_detection디렉토리에서 아래의 명령을 통해 모델 학습을 시작하자
+     ~~~
+     python train.py --train_dir=training/ --pipeline_config_path=training/ssd_mobilenet_v2_quantized_300x300_coco.config
+     ~~~
+ 4. 이때 아래와 같은 오류가 난다면 pip install tensorflow==1.12 명령을 통해 tensorflow 버젼을 1.8.0에서 1.12.0으로 바꿔주자
+     ![예시 이미지](./ex7.png)
+ 5. 아래와 같이 되면 정상적으로 학습하는 중이다.
+     ![예시 이미지](./ex8.png)
+     
+ ## Training Evaluation(학습 검토)
+ 1. 학습중인 터미널은 그대로 두고 새로운 터미널에서 아래의 작업을 해도 무방하다.
+ 2. object_detection/legacy 디렉토리에 있는 eval.py 파일을 object_detection 디렉토리로 옮기자
+ 3. object_ 아래의 명령어를 입력하자 (물론 새로운 터미널에서 가상환경에 들어가야 하고, 위에서 언급한 환경변수도 설정해줘야 한다.)
+     ~~~
+     python eval.py --logtostderr --pipeline_config_path=training/ssd_mobilenet_v2_quantized_300x300_coco.config --checkpoint_dir=training/ --eval_dir=training/
+     ~~~
+
+ ## TensorBoard에서 학습과정 확인하기
+ 1. 새로운 터미널을 사용하자.
+ 2. research/object_detection 디렉토리에서 아래의 명령을 통해 tensorBoard를 실행한다. 
+     ~~~
+     tensorboard --logdir=training
+     ~~~
+ 3. http://localhost:6006 주소를 통해서 tensorBoard로 접속하면 Images에서 아래 이미지와 같이 학습된 모습을 볼 수 있다.
+     ![예시 이미지](./ex9.png)
+ 
