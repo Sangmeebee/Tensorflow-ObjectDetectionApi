@@ -120,7 +120,12 @@ def main():
         xml_df.to_csv('data/{}_labels.csv'.format(directory), index=None)
         print('Successfully converted xml to csv.')
 ~~~
-4. object_detection 디렉토리에 data 디렉토리가 생성된 것을 볼 수 있고, data 디렉토리 안에는 두개의 .csv 파일이 생성된 것을 볼 수 있다.
+4. object_detection 디렉토리에 data 디렉토리를 생성한뒤, 
+~~~
+python xml_to_csv.py
+~~~
+명령어를 실행하자 그러면 data 디렉토리 안에는 두개의 .csv 파일이 생성된 것을 볼 수 있다.
+
 5. generate_tfrecord.py 파일의 코드를 수정한다. 
     - labelimg에서 라벨링 한 이름을 row_label == '(여기)' 여기 안에 넣어주면 된다.
 ~~~
