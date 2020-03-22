@@ -23,12 +23,13 @@
 ### 2. 가상환경에 tensorflow object detection api를 사용하기위한 라이브러리들을 설치 한다.
 
     - $pip install tensorflow==1.8
-    - $pip install Cython
-    - $pip install contextlib2
-    - $pip install pillow
-    - $pip install lxml
-    - $pip install jupyter
-    - $pip install matplotlib
+    - $pip install --upgrade Cython
+    - $pip install --upgrade contextlib2
+    - $pip install --upgrade pillow
+    - $pip install --upgrade lxml
+    - $pip install --upgrade jupyter
+    - $pip install --upgrade matplotlib
+    - $pip install --upgrade pandas
 
 
 ### 3. Clone this [Repository](https://github.com/tensorflow/models)
