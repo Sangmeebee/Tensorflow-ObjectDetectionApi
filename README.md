@@ -283,6 +283,7 @@ $python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=tr
      ~~~
  4. 이때 아래와 같은 오류가 난다면 pip install tensorflow==1.12 명령을 통해 tensorflow 버젼을 1.8.0에서 1.12.0으로 바꿔주자
      ![예시 이미지](./ex7.png)
+     혹시 AttributeError: module 'tensorflow._api.v1.compat' has no attribute 'v1'와 같은 오류가 발생한다면, pip install tensorflow==1.14 명령을 통해 tensorflow 버젼을 1.14로 변경해주자
  5. 아래와 같이 되면 정상적으로 학습하는 중이다.
      ![예시 이미지](./ex8.png)
  
